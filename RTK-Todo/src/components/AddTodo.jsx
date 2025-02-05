@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import { useState } from "react"
 import { useDispatch } from 'react-redux'
-import { addTodo } from '../features/todo/todoSlice'
+import { addTodo } from "../features/todo/todoSlice"
 
-function AddTodo() {
+const AddTodo = () => {
     const [input, setInput] = useState('')
     const dispatch = useDispatch()
 
     const addTodoHandler = (e) => {
         e.preventDefault();
         dispatch(addTodo(input))
-        setInput("");
+        setInput('');
     }
 
     return (
@@ -32,3 +32,5 @@ function AddTodo() {
 }
 
 export default AddTodo
+
+//? useDispatch: -> yeh aik reducer to use krte huwe store me changes krta hai ya value add krta hai.
